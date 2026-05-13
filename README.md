@@ -17,6 +17,7 @@ Direct downloads:
 - [Shoty_0.1.28_x64_en-US.msi](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi)
 - [Shoty_0.1.28_windows_x64_portable.zip](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_windows_x64_portable.zip)
 - [shoty.0.1.28.nupkg](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/shoty.0.1.28.nupkg)
+- [DoubleZero.Shoty.0.1.28-winget-local-manifest.zip](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/DoubleZero.Shoty.0.1.28-winget-local-manifest.zip)
 - [0.1.28-20260513-173436-selfsigned.zip](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/0.1.28-20260513-173436-selfsigned.zip) - internal MSIX sideload testing only
 - [SHA256SUMS-v0.1.28.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS-v0.1.28.txt)
 - [SHA256SUMS.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS.txt)
@@ -68,6 +69,12 @@ Chocolatey package source:
 choco install shoty --source="'https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/'"
 ```
 
+WinGet local manifest before official merge:
+
+```powershell
+winget install --manifest .\d\DoubleZero\Shoty\0.1.28 --accept-package-agreements --accept-source-agreements
+```
+
 Verify downloaded artifacts:
 
 ```powershell
@@ -82,6 +89,7 @@ Checksums:
 20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9  Shoty_0.1.28_windows_x64_portable.zip
 CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F  verify.ps1
 2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77  shoty.0.1.28.nupkg
+0242A20C8912C30CF2E8AB86CDC9522BF35AC41416E829DE9DE536DD3DE4BF94  DoubleZero.Shoty.0.1.28-winget-local-manifest.zip
 710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946  0.1.28-20260513-173436-selfsigned.zip
 ```
 
