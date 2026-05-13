@@ -10,6 +10,7 @@ Download page:
 
 - https://doublezero332.github.io/shoty-windows-releases/
 - Latest GitHub release: https://github.com/doublezero332/shoty-windows-releases/releases/latest
+- Windows install guide: https://github.com/doublezero332/shoty-windows-releases/blob/main/INSTALL-WINDOWS.md
 
 Direct downloads:
 
