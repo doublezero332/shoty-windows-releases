@@ -39,6 +39,15 @@
       "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/shoty.0.1.28.nupkg",
       "sha256": "2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77",
       "size": 2803
+    },
+    {
+      "name": "0.1.28-20260513-173436-selfsigned.zip",
+      "type": "selfsigned-msix-sideload",
+      "architecture": "x64",
+      "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/0.1.28-20260513-173436-selfsigned.zip",
+      "sha256": "710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946",
+      "size": 99285083,
+      "warning": "Internal sideload testing only. Uses a self-signed certificate and is not a public-trust release."
     }
   ],
   "installScripts": {
