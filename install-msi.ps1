@@ -1,9 +1,16 @@
 $ErrorActionPreference = "Stop"
 
-$version = "0.1.28"
-$installerName = "Shoty_0.1.28_x64_en-US.msi"
-$expectedSha256 = "75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654"
-$url = "https://github.com/doublezero332/shoty-windows-releases/releases/download/v$version/$installerName"
+$manifestUrl = "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json"
+$manifest = Invoke-RestMethod -Uri $manifestUrl
+$artifact = @($manifest.artifacts | Where-Object { $_.type -eq "msi" -and $_.architecture -eq "x64" } | Select-Object -First 1)[0]
+if (-not $artifact) {
+  throw "No x64 MSI installer artifact was found in $manifestUrl."
+}
+
+$version = $manifest.version
+$installerName = $artifact.name
+$expectedSha256 = $artifact.sha256
+$url = $artifact.url
 $downloadDir = Join-Path $env:TEMP "shoty-install-$version"
 $installerPath = Join-Path $downloadDir $installerName
 
