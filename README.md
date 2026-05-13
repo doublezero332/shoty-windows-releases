@@ -9,6 +9,7 @@ Version: `0.1.28`
 Download page:
 
 - https://doublezero332.github.io/shoty-windows-releases/
+- Latest GitHub release: https://github.com/doublezero332/shoty-windows-releases/releases/latest
 
 Direct downloads:
 
