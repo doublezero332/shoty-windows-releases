@@ -6,11 +6,21 @@ Public Windows beta release artifacts for Shoty.
 
 Version: `0.1.28`
 
-Download:
+Download page:
+
+- https://doublezero332.github.io/shoty-windows-releases/
+
+Direct downloads:
 
 - [Shoty_0.1.28_x64-setup.exe](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64-setup.exe)
 - [Shoty_0.1.28_x64_en-US.msi](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi)
 - [SHA256SUMS.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS.txt)
+
+PowerShell install:
+
+```powershell
+irm https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install.ps1 | iex
+```
 
 Checksums:
 
