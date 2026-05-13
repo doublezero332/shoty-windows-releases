@@ -22,6 +22,12 @@ PowerShell install:
 irm https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install.ps1 | iex
 ```
 
+MSI/passive install:
+
+```powershell
+irm https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install-msi.ps1 | iex
+```
+
 Checksums:
 
 ```text
