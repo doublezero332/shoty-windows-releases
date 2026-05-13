@@ -21,6 +21,15 @@
       "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi",
       "sha256": "75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654",
       "size": 96899072
+    },
+    {
+      "name": "Shoty_0.1.28_windows_x64_portable.zip",
+      "type": "portable-zip",
+      "architecture": "x64",
+      "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_windows_x64_portable.zip",
+      "sha256": "20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9",
+      "size": 96714957,
+      "entrypoint": "shoty-app.exe"
     }
   ],
   "installScripts": {
