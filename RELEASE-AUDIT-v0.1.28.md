@@ -29,10 +29,11 @@ Public Windows beta release is live.
 | `install.ps1` | `E226D9D664E81B03AB2D585086949C035EF8FBAFB860CA2EC300D295910ED62C` | public |
 | `install-msi.ps1` | `C282CB08BF550253C0048226FA363A6509C0B518317DFD2B3EFB7B7077372F92` | public |
 | `verify.ps1` | `CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F` | public |
-| `latest.json` | `3E392678B7560F52B7E7839CBF19CFEEF5F7E86610BE432827BE5BBAE6500F4A` | public |
+| `latest.json` | `FCA8BC0758A1109013911050BB0FF043A577705CE17937FD1F9A597B261BD936` | public |
 | `bucket/shoty.json` | `F4A48C759DB327C004C082FDA278B926B248372A5CE993B8084A0E98870B07FE` | public |
 | `shoty.0.1.28.nupkg` | `2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77` | public |
-| `SHA256SUMS-v0.1.28.txt` | `58A860300542C8D10D9EA1292E37DC406038E0ADE1D3C63EE2C33CC5FFC201BC` | public |
+| `0.1.28-20260513-173436-selfsigned.zip` | `710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946` | public, internal sideload only |
+| `SHA256SUMS-v0.1.28.txt` | `8038F24D5D4663F24DDFFDCE9CCB3C1CABD24892328E2F3EA262608DDEDCA311` | public |
 | `RELEASE-AUDIT-v0.1.28.md` | See Release asset digest | public |
 
 ## Install Paths
@@ -68,6 +69,12 @@ Portable:
 2. Extract it.
 3. Run `shoty-app.exe`.
 
+Internal self-signed MSIX sideload:
+
+1. Download `0.1.28-20260513-173436-selfsigned.zip`.
+2. Extract it.
+3. Run `Install-ShotyInternalSelfSignedMsix.ps1` from an elevated PowerShell session.
+
 Verify downloaded artifacts:
 
 ```powershell
@@ -76,18 +83,18 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
 
 ## Verification Evidence
 
-- Download page returned HTTP 200 and contained EXE, MSI, portable ZIP, checksums, verify script, and Scoop install paths.
+- Download page returned HTTP 200 and contained EXE, MSI, portable ZIP, self-signed MSIX sideload ZIP, checksums, verify script, and Scoop install paths.
 - Stable latest pages returned HTTP 200 and contained the expected v0.1.28 target filenames:
   - `/download/windows/exe/` -> `Shoty_0.1.28_x64-setup.exe`
   - `/download/windows/msi/` -> `Shoty_0.1.28_x64_en-US.msi`
   - `/download/windows/portable/` -> `Shoty_0.1.28_windows_x64_portable.zip`
 - Public release assets returned HTTP 302 to GitHub release asset storage.
-- `latest.json` parsed successfully and contains three public artifacts.
+- `latest.json` parsed successfully and contains five public artifacts.
 - `SHA256SUMS-v0.1.28.txt` was verified with `verify.ps1` against a local artifact folder:
-  - Checked: 9
+  - Checked: 10
   - Missing: 0
   - Failed: 0
-- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 9 OK.
+- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 10 OK.
 - Portable ZIP was inspected and contains:
   - `shoty-app.exe`
   - FFmpeg DLLs
@@ -104,6 +111,11 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
   - `tools/chocolateyInstall.ps1`
   - `tools/chocolateyUninstall.ps1`
   - PowerShell parser checks passed for install/uninstall scripts.
+- Self-signed MSIX sideload ZIP was generated for internal testing:
+  - Contains `Shoty_0.1.28_x64_store-candidate-selfsigned.msix`.
+  - Contains `DoubleZero-Test-CodeSigning.cer`.
+  - Contains `Install-ShotyInternalSelfSignedMsix.ps1`.
+  - MSIX Authenticode signer subject is `CN=DoubleZero`; status is untrusted because the certificate is self-signed.
 - WinGet manifest local validation succeeded with `winget validate`.
 - WinGet PR is open and approved but blocked on Microsoft CLA:
   - https://github.com/microsoft/winget-pkgs/pull/373873
@@ -126,7 +138,7 @@ These blockers remain:
 
 The v0.1.28 Windows beta is publicly released and installable through GitHub
 Release, GitHub Pages, PowerShell scripts, Scoop, Chocolatey package artifact,
-and portable ZIP.
+portable ZIP, and internal self-signed MSIX sideload ZIP.
 
 This is not yet a signed official Windows release.
 
