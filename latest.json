@@ -5,6 +5,7 @@
   "signed": false,
   "releaseUrl": "https://github.com/doublezero332/shoty-windows-releases/releases/tag/v0.1.28",
   "downloadPageUrl": "https://doublezero332.github.io/shoty-windows-releases/",
+  "checksumsUrl": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS-v0.1.28.txt",
   "artifacts": [
     {
       "name": "Shoty_0.1.28_x64-setup.exe",
