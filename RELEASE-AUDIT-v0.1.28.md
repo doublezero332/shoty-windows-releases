@@ -18,6 +18,9 @@ Public Windows beta release is live.
 - Stable latest EXE link: https://doublezero332.github.io/shoty-windows-releases/download/windows/exe/
 - Stable latest MSI link: https://doublezero332.github.io/shoty-windows-releases/download/windows/msi/
 - Stable latest portable ZIP link: https://doublezero332.github.io/shoty-windows-releases/download/windows/portable/
+- Stable latest EXE asset: https://github.com/doublezero332/shoty-windows-releases/releases/latest/download/ShotySetup.exe
+- Stable latest MSI asset: https://github.com/doublezero332/shoty-windows-releases/releases/latest/download/Shoty.msi
+- Stable latest portable asset: https://github.com/doublezero332/shoty-windows-releases/releases/latest/download/ShotyPortable.zip
 
 ## Artifacts
 
@@ -26,14 +29,17 @@ Public Windows beta release is live.
 | `Shoty_0.1.28_x64-setup.exe` | `5E5A9DBF60AAAF371E00E31C2A4AE804C5EF58A58F7DC97FAB9B3A1F81520F8A` | public |
 | `Shoty_0.1.28_x64_en-US.msi` | `75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654` | public |
 | `Shoty_0.1.28_windows_x64_portable.zip` | `20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9` | public |
+| `ShotySetup.exe` | `5E5A9DBF60AAAF371E00E31C2A4AE804C5EF58A58F7DC97FAB9B3A1F81520F8A` | public stable alias |
+| `Shoty.msi` | `75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654` | public stable alias |
+| `ShotyPortable.zip` | `20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9` | public stable alias |
 | `install.ps1` | `DF4989B776DB41EFA998D2B3B36209A36A941130D6F7EE69FDC6E79354D4DD9E` | public |
 | `install-msi.ps1` | `FBF026DFE0FB48697E09E2FBC863A468DED0A779651D7E5F3AB2B30C5719CC5A` | public |
 | `verify.ps1` | `CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F` | public |
-| `latest.json` | `FCA8BC0758A1109013911050BB0FF043A577705CE17937FD1F9A597B261BD936` | public |
+| `latest.json` | `3A14D1E4B261AD49607AF793C3198CE0975946F1ECB8310F8525CF457CC54218` | public |
 | `bucket/shoty.json` | `F4A48C759DB327C004C082FDA278B926B248372A5CE993B8084A0E98870B07FE` | public |
 | `shoty.0.1.28.nupkg` | `2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77` | public |
 | `0.1.28-20260513-173436-selfsigned.zip` | `710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946` | public, internal sideload only |
-| `SHA256SUMS-v0.1.28.txt` | `52438A79E6A72963C278AF47D623D56D6FA557E7CE623B6018A41B499D0A2C63` | public |
+| `SHA256SUMS-v0.1.28.txt` | `1CAB7E29454214FDBFFD0824BBCB380355DF25889CFFB44CF8B9AB58B8B65654` | public |
 | `RELEASE-AUDIT-v0.1.28.md` | See Release asset digest | public |
 
 ## Install Paths
@@ -88,13 +94,15 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
   - `/download/windows/exe/` -> `Shoty_0.1.28_x64-setup.exe`
   - `/download/windows/msi/` -> `Shoty_0.1.28_x64_en-US.msi`
   - `/download/windows/portable/` -> `Shoty_0.1.28_windows_x64_portable.zip`
+- Stable latest GitHub asset URLs for `ShotySetup.exe`, `Shoty.msi`, and `ShotyPortable.zip` redirected to v0.1.28 assets and reached HTTP 200.
 - Public release assets returned HTTP 302 to GitHub release asset storage.
 - `latest.json` parsed successfully and contains five public artifacts.
+- `latest.json` includes stable latest asset URLs for the NSIS, MSI, and portable ZIP artifacts.
 - `SHA256SUMS-v0.1.28.txt` was verified with `verify.ps1` against a local artifact folder:
-  - Checked: 10
+  - Checked: 13
   - Missing: 0
   - Failed: 0
-- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 10 OK.
+- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 13 OK.
 - Portable ZIP was inspected and contains:
   - `shoty-app.exe`
   - FFmpeg DLLs
