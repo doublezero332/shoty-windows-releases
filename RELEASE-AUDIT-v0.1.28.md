@@ -38,8 +38,9 @@ Public Windows beta release is live.
 | `latest.json` | `3A14D1E4B261AD49607AF793C3198CE0975946F1ECB8310F8525CF457CC54218` | public |
 | `bucket/shoty.json` | `F4A48C759DB327C004C082FDA278B926B248372A5CE993B8084A0E98870B07FE` | public |
 | `shoty.0.1.28.nupkg` | `2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77` | public |
+| `DoubleZero.Shoty.0.1.28-winget-local-manifest.zip` | `0242A20C8912C30CF2E8AB86CDC9522BF35AC41416E829DE9DE536DD3DE4BF94` | public local WinGet manifest |
 | `0.1.28-20260513-173436-selfsigned.zip` | `710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946` | public, internal sideload only |
-| `SHA256SUMS-v0.1.28.txt` | `1CAB7E29454214FDBFFD0824BBCB380355DF25889CFFB44CF8B9AB58B8B65654` | public |
+| `SHA256SUMS-v0.1.28.txt` | `3C5016CFB903D0651BD159709493EBCD001F34D6C0454DACA9EAFA72B38EC17A` | public |
 | `RELEASE-AUDIT-v0.1.28.md` | See Release asset digest | public |
 
 ## Install Paths
@@ -67,6 +68,12 @@ Chocolatey package source:
 
 ```powershell
 choco install shoty --source="'https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/'"
+```
+
+WinGet local manifest before official merge:
+
+```powershell
+winget install --manifest .\d\DoubleZero\Shoty\0.1.28 --accept-package-agreements --accept-source-agreements
 ```
 
 Portable:
@@ -99,10 +106,10 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
 - `latest.json` parsed successfully and contains five public artifacts.
 - `latest.json` includes stable latest asset URLs for the NSIS, MSI, and portable ZIP artifacts.
 - `SHA256SUMS-v0.1.28.txt` was verified with `verify.ps1` against a local artifact folder:
-  - Checked: 13
+  - Checked: 14
   - Missing: 0
   - Failed: 0
-- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 13 OK.
+- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 14 OK.
 - Portable ZIP was inspected and contains:
   - `shoty-app.exe`
   - FFmpeg DLLs
@@ -126,6 +133,7 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
   - Contains `Install-ShotyInternalSelfSignedMsix.ps1`.
   - MSIX Authenticode signer subject is `CN=DoubleZero`; status is untrusted because the certificate is self-signed.
 - WinGet manifest local validation succeeded with `winget validate`.
+- Local WinGet manifest ZIP contains the validated manifest directory plus install notes for `winget install --manifest` before official PR merge.
 - WinGet PR is open and approved but blocked on Microsoft CLA:
   - https://github.com/microsoft/winget-pkgs/pull/373873
   - DoubleZero/company CLA comment: `@microsoft-github-policy-service agree company="DoubleZero"`
