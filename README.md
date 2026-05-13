@@ -19,6 +19,12 @@ Direct downloads:
 - [SHA256SUMS.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS.txt)
 - [latest.json](https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json)
 
+Stable latest links:
+
+- https://doublezero332.github.io/shoty-windows-releases/download/windows/exe/
+- https://doublezero332.github.io/shoty-windows-releases/download/windows/msi/
+- https://doublezero332.github.io/shoty-windows-releases/download/windows/portable/
+
 PowerShell install:
 
 ```powershell
