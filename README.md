@@ -92,4 +92,10 @@ Get-FileHash .\Shoty_0.1.28_x64_en-US.msi -Algorithm SHA256
 ## WinGet status
 
 A WinGet submission is open at https://github.com/microsoft/winget-pkgs/pull/373873.
-It is currently blocked on Microsoft CLA agreement by the GitHub account holder.
+It is approved and currently blocked only on Microsoft CLA agreement by the GitHub account holder.
+
+CLA comment for a DoubleZero/company submission:
+
+```text
+@microsoft-github-policy-service agree company="DoubleZero"
+```
