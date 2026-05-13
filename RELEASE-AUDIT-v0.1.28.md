@@ -15,6 +15,9 @@ Public Windows beta release is live.
 - Public release: https://github.com/doublezero332/shoty-windows-releases/releases/tag/v0.1.28
 - Release manifest: https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/latest.json
 - Full checksums: https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS-v0.1.28.txt
+- Stable latest EXE link: https://doublezero332.github.io/shoty-windows-releases/download/windows/exe/
+- Stable latest MSI link: https://doublezero332.github.io/shoty-windows-releases/download/windows/msi/
+- Stable latest portable ZIP link: https://doublezero332.github.io/shoty-windows-releases/download/windows/portable/
 
 ## Artifacts
 
@@ -28,6 +31,8 @@ Public Windows beta release is live.
 | `verify.ps1` | `CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F` | public |
 | `latest.json` | `3E392678B7560F52B7E7839CBF19CFEEF5F7E86610BE432827BE5BBAE6500F4A` | public |
 | `bucket/shoty.json` | `F4A48C759DB327C004C082FDA278B926B248372A5CE993B8084A0E98870B07FE` | public |
+| `SHA256SUMS-v0.1.28.txt` | `4E778525575EA08BFED74356652C8C144603C0D7B6C431A344651BE31BA1C079` | public |
+| `RELEASE-AUDIT-v0.1.28.md` | See Release asset digest | public |
 
 ## Install Paths
 
@@ -56,15 +61,26 @@ Portable:
 2. Extract it.
 3. Run `shoty-app.exe`.
 
+Verify downloaded artifacts:
+
+```powershell
+irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/verify.ps1 | iex
+```
+
 ## Verification Evidence
 
 - Download page returned HTTP 200 and contained EXE, MSI, portable ZIP, checksums, verify script, and Scoop install paths.
+- Stable latest pages returned HTTP 200 and contained the expected v0.1.28 target filenames:
+  - `/download/windows/exe/` -> `Shoty_0.1.28_x64-setup.exe`
+  - `/download/windows/msi/` -> `Shoty_0.1.28_x64_en-US.msi`
+  - `/download/windows/portable/` -> `Shoty_0.1.28_windows_x64_portable.zip`
 - Public release assets returned HTTP 302 to GitHub release asset storage.
 - `latest.json` parsed successfully and contains three public artifacts.
 - `SHA256SUMS-v0.1.28.txt` was verified with `verify.ps1` against a local artifact folder:
   - Checked: 8
   - Missing: 0
   - Failed: 0
+- The first checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and verification then passed with 8 OK.
 - Portable ZIP was inspected and contains:
   - `shoty-app.exe`
   - FFmpeg DLLs
@@ -79,6 +95,10 @@ Portable:
 - WinGet manifest local validation succeeded with `winget validate`.
 - WinGet PR is open and approved but blocked on Microsoft CLA:
   - https://github.com/microsoft/winget-pkgs/pull/373873
+- AWS official deployment path was checked:
+  - AWS profile `shoty-release` maps to `arn:aws:iam::316956664287:user/shoty-release-windows`.
+  - `s3://shoty-uploads` list access failed with `AccessDenied` for `s3:ListBucket`.
+  - Official deploy script requires Authenticode verification before upload.
 
 ## Not Complete For Official Distribution
 
@@ -95,3 +115,4 @@ The v0.1.28 Windows beta is publicly released and installable through GitHub
 Release, GitHub Pages, PowerShell scripts, Scoop, and portable ZIP.
 
 This is not yet a signed official Windows release.
+
