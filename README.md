@@ -41,6 +41,13 @@ Version-pinned MSI/passive install:
 irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/install-msi.ps1 | iex
 ```
 
+Scoop bucket install:
+
+```powershell
+scoop bucket add shoty https://github.com/doublezero332/shoty-windows-releases
+scoop install shoty
+```
+
 Checksums:
 
 ```text
