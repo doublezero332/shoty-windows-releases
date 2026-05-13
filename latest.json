@@ -35,7 +35,8 @@
   ],
   "installScripts": {
     "interactive": "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install.ps1",
-    "msiPassive": "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install-msi.ps1"
+    "msiPassive": "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install-msi.ps1",
+    "verify": "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/verify.ps1"
   },
   "warnings": [
     "Artifacts are unsigned beta builds.",
