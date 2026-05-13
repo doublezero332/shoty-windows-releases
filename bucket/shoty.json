@@ -1,0 +1,36 @@
+{
+  "version": "0.1.28",
+  "description": "Shoty is a desktop video editor for Windows.",
+  "homepage": "https://www.shoty.ai/",
+  "license": "Proprietary",
+  "notes": [
+    "This is an unsigned Windows beta build.",
+    "Windows SmartScreen / Unknown publisher warnings are expected until Authenticode signing or Microsoft Store certification is complete."
+  ],
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64-setup.exe",
+      "hash": "5E5A9DBF60AAAF371E00E31C2A4AE804C5EF58A58F7DC97FAB9B3A1F81520F8A"
+    }
+  },
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "checkver": {
+    "url": "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json",
+    "jsonpath": "$.version"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v$version/Shoty_$version_x64-setup.exe"
+      }
+    },
+    "hash": {
+      "url": "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json",
+      "jsonpath": "$.artifacts[?(@.name == 'Shoty_$version_x64-setup.exe')].sha256"
+    }
+  }
+}
