@@ -15,6 +15,7 @@ Public Windows beta release is live.
 - Public release: https://github.com/doublezero332/shoty-windows-releases/releases/tag/v0.1.28
 - Release manifest: https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/latest.json
 - Full checksums: https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS-v0.1.28.txt
+- Windows install guide: https://github.com/doublezero332/shoty-windows-releases/blob/main/INSTALL-WINDOWS.md
 - Stable latest EXE link: https://doublezero332.github.io/shoty-windows-releases/download/windows/exe/
 - Stable latest MSI link: https://doublezero332.github.io/shoty-windows-releases/download/windows/msi/
 - Stable latest portable ZIP link: https://doublezero332.github.io/shoty-windows-releases/download/windows/portable/
@@ -35,12 +36,13 @@ Public Windows beta release is live.
 | `install.ps1` | `DF4989B776DB41EFA998D2B3B36209A36A941130D6F7EE69FDC6E79354D4DD9E` | public |
 | `install-msi.ps1` | `FBF026DFE0FB48697E09E2FBC863A468DED0A779651D7E5F3AB2B30C5719CC5A` | public |
 | `verify.ps1` | `CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F` | public |
-| `latest.json` | `3A14D1E4B261AD49607AF793C3198CE0975946F1ECB8310F8525CF457CC54218` | public |
+| `INSTALL-WINDOWS.md` | `A46E496C53D4224799779B854D42B1CC093ACA6B149013094E3BDBA2F6AA18E5` | public |
+| `latest.json` | `C222B290E421431CC0EF2E0E5F74BC507F768B507EB4110A35E91EE52F422E03` | public |
 | `bucket/shoty.json` | `F4A48C759DB327C004C082FDA278B926B248372A5CE993B8084A0E98870B07FE` | public |
 | `shoty.0.1.28.nupkg` | `2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77` | public |
 | `DoubleZero.Shoty.0.1.28-winget-local-manifest.zip` | `0242A20C8912C30CF2E8AB86CDC9522BF35AC41416E829DE9DE536DD3DE4BF94` | public local WinGet manifest |
 | `0.1.28-20260513-173436-selfsigned.zip` | `710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946` | public, internal sideload only |
-| `SHA256SUMS-v0.1.28.txt` | `3C5016CFB903D0651BD159709493EBCD001F34D6C0454DACA9EAFA72B38EC17A` | public |
+| `SHA256SUMS-v0.1.28.txt` | `62DB570CAB7FEDDC89B64B3D85035B1A18AEDC9F737E5EE73DDFD586961279BB` | public |
 | `RELEASE-AUDIT-v0.1.28.md` | See Release asset digest | public |
 
 ## Install Paths
@@ -106,10 +108,10 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
 - `latest.json` parsed successfully and contains five public artifacts.
 - `latest.json` includes stable latest asset URLs for the NSIS, MSI, and portable ZIP artifacts.
 - `SHA256SUMS-v0.1.28.txt` was verified with `verify.ps1` against a local artifact folder:
-  - Checked: 14
+  - Checked: 15
   - Missing: 0
   - Failed: 0
-- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 14 OK.
+- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 15 OK.
 - Portable ZIP was inspected and contains:
   - `shoty-app.exe`
   - FFmpeg DLLs
