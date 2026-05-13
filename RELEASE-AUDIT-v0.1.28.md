@@ -107,6 +107,7 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
 - WinGet manifest local validation succeeded with `winget validate`.
 - WinGet PR is open and approved but blocked on Microsoft CLA:
   - https://github.com/microsoft/winget-pkgs/pull/373873
+  - DoubleZero/company CLA comment: `@microsoft-github-policy-service agree company="DoubleZero"`
 - AWS official deployment path was checked:
   - AWS profile `shoty-release` maps to `arn:aws:iam::316956664287:user/shoty-release-windows`.
   - `s3://shoty-uploads` list access failed with `AccessDenied` for `s3:ListBucket`.
