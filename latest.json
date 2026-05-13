@@ -31,6 +31,14 @@
       "sha256": "20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9",
       "size": 96714957,
       "entrypoint": "shoty-app.exe"
+    },
+    {
+      "name": "shoty.0.1.28.nupkg",
+      "type": "chocolatey",
+      "architecture": "x64",
+      "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/shoty.0.1.28.nupkg",
+      "sha256": "2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77",
+      "size": 2803
     }
   ],
   "installScripts": {
