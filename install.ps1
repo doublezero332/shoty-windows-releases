@@ -1,9 +1,16 @@
 $ErrorActionPreference = "Stop"
 
-$version = "0.1.28"
-$installerName = "Shoty_0.1.28_x64-setup.exe"
-$expectedSha256 = "5E5A9DBF60AAAF371E00E31C2A4AE804C5EF58A58F7DC97FAB9B3A1F81520F8A"
-$url = "https://github.com/doublezero332/shoty-windows-releases/releases/download/v$version/$installerName"
+$manifestUrl = "https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json"
+$manifest = Invoke-RestMethod -Uri $manifestUrl
+$artifact = @($manifest.artifacts | Where-Object { $_.type -eq "nsis" -and $_.architecture -eq "x64" } | Select-Object -First 1)[0]
+if (-not $artifact) {
+  throw "No x64 NSIS installer artifact was found in $manifestUrl."
+}
+
+$version = $manifest.version
+$installerName = $artifact.name
+$expectedSha256 = $artifact.sha256
+$url = $artifact.url
 $downloadDir = Join-Path $env:TEMP "shoty-install-$version"
 $installerPath = Join-Path $downloadDir $installerName
 
