@@ -15,6 +15,7 @@ Direct downloads:
 - [Shoty_0.1.28_x64-setup.exe](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64-setup.exe)
 - [Shoty_0.1.28_x64_en-US.msi](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi)
 - [Shoty_0.1.28_windows_x64_portable.zip](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_windows_x64_portable.zip)
+- [shoty.0.1.28.nupkg](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/shoty.0.1.28.nupkg)
 - [SHA256SUMS-v0.1.28.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS-v0.1.28.txt)
 - [SHA256SUMS.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS.txt)
 - [latest.json](https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json)
@@ -56,6 +57,12 @@ scoop bucket add shoty https://github.com/doublezero332/shoty-windows-releases
 scoop install shoty
 ```
 
+Chocolatey package source:
+
+```powershell
+choco install shoty --source="'https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/'"
+```
+
 Verify downloaded artifacts:
 
 ```powershell
@@ -69,6 +76,7 @@ Checksums:
 75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654  Shoty_0.1.28_x64_en-US.msi
 20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9  Shoty_0.1.28_windows_x64_portable.zip
 CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F  verify.ps1
+2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77  shoty.0.1.28.nupkg
 ```
 
 ## Install notes
