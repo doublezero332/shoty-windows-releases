@@ -1,7 +1,35 @@
 # Shoty Windows Releases
 
-Public Windows release artifacts for Shoty.
+Public Windows beta release artifacts for Shoty.
 
-The current Windows artifacts are unsigned beta builds. Windows SmartScreen / Unknown publisher warnings are expected until a public-trust Authenticode signing surface or Microsoft Store certification is available.
+## Latest Windows beta
 
-Use the SHA-256 checksums published with each release to verify downloads.
+Version: `0.1.28`
+
+Download:
+
+- [Shoty_0.1.28_x64-setup.exe](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64-setup.exe)
+- [Shoty_0.1.28_x64_en-US.msi](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi)
+- [SHA256SUMS.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS.txt)
+
+Checksums:
+
+```text
+5E5A9DBF60AAAF371E00E31C2A4AE804C5EF58A58F7DC97FAB9B3A1F81520F8A  Shoty_0.1.28_x64-setup.exe
+75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654  Shoty_0.1.28_x64_en-US.msi
+```
+
+## Install notes
+
+These Windows artifacts are unsigned beta builds. Windows SmartScreen / Unknown publisher warnings are expected until a public-trust Authenticode signing surface or Microsoft Store certification is available.
+
+To verify a download in PowerShell:
+
+```powershell
+Get-FileHash .\Shoty_0.1.28_x64_en-US.msi -Algorithm SHA256
+```
+
+## WinGet status
+
+A WinGet submission is open at https://github.com/microsoft/winget-pkgs/pull/373873.
+It is currently blocked on Microsoft CLA agreement by the GitHub account holder.
