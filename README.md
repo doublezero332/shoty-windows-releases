@@ -16,6 +16,7 @@ Direct downloads:
 - [Shoty_0.1.28_x64_en-US.msi](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi)
 - [Shoty_0.1.28_windows_x64_portable.zip](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_windows_x64_portable.zip)
 - [shoty.0.1.28.nupkg](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/shoty.0.1.28.nupkg)
+- [0.1.28-20260513-173436-selfsigned.zip](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/0.1.28-20260513-173436-selfsigned.zip) - internal MSIX sideload testing only
 - [SHA256SUMS-v0.1.28.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS-v0.1.28.txt)
 - [SHA256SUMS.txt](https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/SHA256SUMS.txt)
 - [latest.json](https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/latest.json)
@@ -77,6 +78,7 @@ Checksums:
 20948539487946DB89D2BEBCAC3194DE9DA0C971A6C5CD85E9C77A0B5331B6D9  Shoty_0.1.28_windows_x64_portable.zip
 CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F  verify.ps1
 2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77  shoty.0.1.28.nupkg
+710E7C977041C3C999F3DCEDE4643DF949FDC706321CD6A2CA11FC58C1650946  0.1.28-20260513-173436-selfsigned.zip
 ```
 
 ## Install notes
