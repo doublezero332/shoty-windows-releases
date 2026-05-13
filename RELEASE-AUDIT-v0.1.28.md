@@ -31,7 +31,8 @@ Public Windows beta release is live.
 | `verify.ps1` | `CEE89F3B360FAA8C357639B2BC368FADAE5707FD1913F9E704FEE47BCA687D2F` | public |
 | `latest.json` | `3E392678B7560F52B7E7839CBF19CFEEF5F7E86610BE432827BE5BBAE6500F4A` | public |
 | `bucket/shoty.json` | `F4A48C759DB327C004C082FDA278B926B248372A5CE993B8084A0E98870B07FE` | public |
-| `SHA256SUMS-v0.1.28.txt` | `4E778525575EA08BFED74356652C8C144603C0D7B6C431A344651BE31BA1C079` | public |
+| `shoty.0.1.28.nupkg` | `2536CC61E330C425E222BEAF8150FF61253CF81143785C864DB112330F293A77` | public |
+| `SHA256SUMS-v0.1.28.txt` | `58A860300542C8D10D9EA1292E37DC406038E0ADE1D3C63EE2C33CC5FFC201BC` | public |
 | `RELEASE-AUDIT-v0.1.28.md` | See Release asset digest | public |
 
 ## Install Paths
@@ -53,6 +54,12 @@ Scoop:
 ```powershell
 scoop bucket add shoty https://github.com/doublezero332/shoty-windows-releases
 scoop install shoty
+```
+
+Chocolatey package source:
+
+```powershell
+choco install shoty --source="'https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/'"
 ```
 
 Portable:
@@ -77,10 +84,10 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
 - Public release assets returned HTTP 302 to GitHub release asset storage.
 - `latest.json` parsed successfully and contains three public artifacts.
 - `SHA256SUMS-v0.1.28.txt` was verified with `verify.ps1` against a local artifact folder:
-  - Checked: 8
+  - Checked: 9
   - Missing: 0
   - Failed: 0
-- The first checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and verification then passed with 8 OK.
+- An earlier checksum verification run caught a stale `latest.json` hash; the checksum file was corrected and the latest verification passed with 9 OK.
 - Portable ZIP was inspected and contains:
   - `shoty-app.exe`
   - FFmpeg DLLs
@@ -92,6 +99,11 @@ irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0
   - Process was still running after 8 seconds.
   - Process was then stopped manually.
 - Scoop manifest validation succeeded against the official Scoop schema using `ajv-cli --strict=false`.
+- Chocolatey `.nupkg` package was generated with NuGet CLI and inspected:
+  - `shoty.nuspec`
+  - `tools/chocolateyInstall.ps1`
+  - `tools/chocolateyUninstall.ps1`
+  - PowerShell parser checks passed for install/uninstall scripts.
 - WinGet manifest local validation succeeded with `winget validate`.
 - WinGet PR is open and approved but blocked on Microsoft CLA:
   - https://github.com/microsoft/winget-pkgs/pull/373873
@@ -112,7 +124,8 @@ These blockers remain:
 ## Conclusion
 
 The v0.1.28 Windows beta is publicly released and installable through GitHub
-Release, GitHub Pages, PowerShell scripts, Scoop, and portable ZIP.
+Release, GitHub Pages, PowerShell scripts, Scoop, Chocolatey package artifact,
+and portable ZIP.
 
 This is not yet a signed official Windows release.
 
