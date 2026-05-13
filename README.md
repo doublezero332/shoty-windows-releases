@@ -23,10 +23,22 @@ PowerShell install:
 irm https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install.ps1 | iex
 ```
 
+Version-pinned PowerShell install:
+
+```powershell
+irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/install.ps1 | iex
+```
+
 MSI/passive install:
 
 ```powershell
 irm https://raw.githubusercontent.com/doublezero332/shoty-windows-releases/main/install-msi.ps1 | iex
+```
+
+Version-pinned MSI/passive install:
+
+```powershell
+irm https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/install-msi.ps1 | iex
 ```
 
 Checksums:
