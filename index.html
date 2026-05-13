@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoty Windows Beta</title>
+  <style>
+    :root { color-scheme: light dark; font-family: Inter, Segoe UI, Arial, sans-serif; }
+    body { margin: 0; background: #101113; color: #f3f4f6; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
+    h1 { font-size: 40px; line-height: 1.1; margin: 0 0 12px; }
+    p { color: #c8cdd5; line-height: 1.6; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+    a.button { background: #2f7df6; color: white; padding: 12px 16px; border-radius: 8px; text-decoration: none; font-weight: 650; }
+    a.secondary { background: #252932; }
+    code, pre { background: #1c2028; border-radius: 8px; }
+    pre { padding: 16px; overflow: auto; color: #e7eaf0; }
+    .notice { border: 1px solid #414856; border-radius: 8px; padding: 16px; background: #171a20; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Shoty Windows Beta</h1>
+    <p>Download the current Shoty Windows beta build.</p>
+    <div class="actions">
+      <a class="button" href="https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64-setup.exe">Download EXE</a>
+      <a class="button secondary" href="https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/Shoty_0.1.28_x64_en-US.msi">Download MSI</a>
+      <a class="button secondary" href="https://github.com/doublezero332/shoty-windows-releases/releases/tag/v0.1.28">Release notes</a>
+    </div>
+    <div class="notice">
+      <p><strong>Unsigned beta:</strong> Windows SmartScreen / Unknown publisher warnings are expected until Authenticode signing or Microsoft Store certification is complete.</p>
+    </div>
+    <h2>Verify SHA-256</h2>
+    <pre>5E5A9DBF60AAAF371E00E31C2A4AE804C5EF58A58F7DC97FAB9B3A1F81520F8A  Shoty_0.1.28_x64-setup.exe
+75A8EC991CB3DD3DB634B46A048C14A4DCC8F54785433A2190D1737863D8C654  Shoty_0.1.28_x64_en-US.msi</pre>
+    <p>PowerShell: <code>Get-FileHash .\Shoty_0.1.28_x64_en-US.msi -Algorithm SHA256</code></p>
+    <p>WinGet submission: <a href="https://github.com/microsoft/winget-pkgs/pull/373873">microsoft/winget-pkgs#373873</a></p>
+  </main>
+</body>
+</html>
