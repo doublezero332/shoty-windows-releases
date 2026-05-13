@@ -44,6 +44,15 @@
       "size": 2803
     },
     {
+      "name": "DoubleZero.Shoty.0.1.28-winget-local-manifest.zip",
+      "type": "winget-local-manifest",
+      "architecture": "x64",
+      "url": "https://github.com/doublezero332/shoty-windows-releases/releases/download/v0.1.28/DoubleZero.Shoty.0.1.28-winget-local-manifest.zip",
+      "sha256": "0242A20C8912C30CF2E8AB86CDC9522BF35AC41416E829DE9DE536DD3DE4BF94",
+      "size": 2248,
+      "warning": "Local WinGet manifest for testing before the official WinGet PR is merged."
+    },
+    {
       "name": "0.1.28-20260513-173436-selfsigned.zip",
       "type": "selfsigned-msix-sideload",
       "architecture": "x64",
