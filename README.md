@@ -27,6 +27,9 @@ Stable latest links:
 - https://doublezero332.github.io/shoty-windows-releases/download/windows/exe/
 - https://doublezero332.github.io/shoty-windows-releases/download/windows/msi/
 - https://doublezero332.github.io/shoty-windows-releases/download/windows/portable/
+- https://github.com/doublezero332/shoty-windows-releases/releases/latest/download/ShotySetup.exe
+- https://github.com/doublezero332/shoty-windows-releases/releases/latest/download/Shoty.msi
+- https://github.com/doublezero332/shoty-windows-releases/releases/latest/download/ShotyPortable.zip
 
 PowerShell install:
 
